@@ -26,7 +26,7 @@ By the end of this tutorial, you'll possess the knowledge and skills to implemen
 Subscribe to my channel: 
 https://www.youtube.com/@devergolabs
 
-💼 Business Inquiries:
+💼 Business Inquiries and custom courses:
 E-mail: devergo@gmail.com
 Whatsapp: +39 3713735771
 Telegram: @samsamtx
