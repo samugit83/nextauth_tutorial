@@ -18,7 +18,7 @@ export default function HomeComp(){
      )
     }
 
-    return (
+    return ( 
         <>
             <div className={'textcont'}>Not signed in</div>
             <button className={'signin'} onClick={() => signIn()}>Sign in</button>
