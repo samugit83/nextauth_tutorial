@@ -39,3 +39,38 @@ body {
   padding: 10px;
 }
 
+
+.form-container {
+  max-width: 400px;
+  margin: 20px auto; /* Added margin to the top */
+  padding: 20px; /* Added padding for a cleaner look */
+  border: 1px solid #ddd; /* Added a border for a subtle separation */
+  border-radius: 5px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Added border color */
+  border-radius: 3px; /* Added border radius for a softer look */
+}
+
+.form-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #45a049;
+}

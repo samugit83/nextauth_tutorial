@@ -16,8 +16,6 @@ export default function ProtectedPage() {
                 const CsrfToken = await getCsrfToken();
                 const Providers = await getProviders();
 
-                console.log(Session)
-
             }
 
            fetchData();

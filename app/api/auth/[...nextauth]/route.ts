@@ -1,8 +1,8 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-import NextAuth from "next-auth"
-import {cookies} from 'next/headers'
-import type { NextAuthOptions } from "next-auth"
-import type { NextApiRequest, NextApiResponse } from "next"
+import NextAuth from 'next-auth'
+import type { NextAuthOptions } from 'next-auth'
+import {VerifyUser} from '@/app/database/dynamo_conn.mjs'
+
 
 
 export const authOptions: NextAuthOptions = {
@@ -41,40 +41,17 @@ export const authOptions: NextAuthOptions = {
                 username: {label: 'Username', type: 'text', placeholder: 'add your username'},
                 password: {label: 'Password', type: 'password'}
             },
-
             async authorize(credentials, req) {
 
-
-                /*
-                  const res = await fetch("/your/endpoint", {
-                    method: 'POST',
-                    body: JSON.stringify(credentials),
-                    headers: { "Content-Type": "application/json" }
-                  })
-
-                  const user = await res.json()
-            
-                  // If no error and we have user data, return it
-                  if (res.ok && user) {
-                    return user
-                  }
-                  // Return null if user data could not be retrieved
-                  return null
-                */
-
-              return Promise.resolve({name: 'samuele', email: 'samgiam@gmail.com', image: 'urlimage', other_data: 'somedata'})
-
+              let user = await VerifyUser(credentials?.username, credentials.password)
+              return user
+              
             }
          }
   
         )
     ]
 }
-
-
-
-
-
 
 
 
