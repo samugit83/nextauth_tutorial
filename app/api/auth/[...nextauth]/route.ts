@@ -2,8 +2,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import NextAuth from 'next-auth'
 import type { NextAuthOptions } from 'next-auth'
 import {VerifyUser} from '@/app/database/dynamo_conn.mjs'
-
-
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
     callbacks: {
@@ -47,9 +46,19 @@ export const authOptions: NextAuthOptions = {
               return user
               
             }
-         }
-  
-        )
+         }),
+         GoogleProvider({
+          clientId: process.env.GOOGLE_CLIENT_ID,
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            profile(profile) {
+              
+              console.log(profile)
+              profile.id = 'samuele'
+              return profile
+            },
+
+        })
+
     ]
 }
 
